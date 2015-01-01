@@ -1,18 +1,18 @@
-Formbuilder.registerField 'number',
+App.Formbuilder.registerField 'number',
 
   order: 30
 
   view: """
     <input type='text' />
-    <% if (units = rf.get(Formbuilder.options.mappings.UNITS)) { %>
+    <% if (units = rf.get(App.Formbuilder.options.mappings.UNITS)) { %>
       <%= units %>
     <% } %>
   """
 
   edit: """
-    <%= Formbuilder.templates['edit/min_max']() %>
-    <%= Formbuilder.templates['edit/units']() %>
-    <%= Formbuilder.templates['edit/integer_only']() %>
+    <%= App.Formbuilder.templates['edit/min_max']() %>
+    <%= App.Formbuilder.templates['edit/units']() %>
+    <%= App.Formbuilder.templates['edit/integer_only']() %>
   """
 
   addButton: """

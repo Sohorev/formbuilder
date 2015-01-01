@@ -1,9 +1,9 @@
 <div class='subtemplate-wrapper'>
   <div class='cover'></div>
-  <%= Formbuilder.templates['view/label']({rf: rf}) %>
+  <%= App.Formbuilder.templates['view/label']({rf: rf}) %>
 
-  <%= Formbuilder.fields[rf.get(Formbuilder.options.mappings.FIELD_TYPE)].view({rf: rf}) %>
+  <%= App.Formbuilder.fields[rf.get(App.Formbuilder.options.mappings.FIELD_TYPE)].view({rf: rf}) %>
 
-  <%= Formbuilder.templates['view/description']({rf: rf}) %>
-  <%= Formbuilder.templates['view/duplicate_remove']({rf: rf}) %>
+  <%= App.Formbuilder.templates['view/description']({rf: rf}) %>
+  <%= App.Formbuilder.templates['view/duplicate_remove']({rf: rf}) %>
 </div>

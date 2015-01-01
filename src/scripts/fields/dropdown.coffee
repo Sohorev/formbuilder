@@ -1,23 +1,23 @@
-Formbuilder.registerField 'dropdown',
+App.Formbuilder.registerField 'dropdown',
 
   order: 24
 
   view: """
     <select>
-      <% if (rf.get(Formbuilder.options.mappings.INCLUDE_BLANK)) { %>
+      <% if (rf.get(App.Formbuilder.options.mappings.INCLUDE_BLANK)) { %>
         <option value=''></option>
       <% } %>
 
-      <% for (i in (rf.get(Formbuilder.options.mappings.OPTIONS) || [])) { %>
-        <option <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].checked && 'selected' %>>
-          <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].label %>
+      <% for (i in (rf.get(App.Formbuilder.options.mappings.OPTIONS) || [])) { %>
+        <option <%= rf.get(App.Formbuilder.options.mappings.OPTIONS)[i].checked && 'selected' %>>
+          <%= rf.get(App.Formbuilder.options.mappings.OPTIONS)[i].label %>
         </option>
       <% } %>
     </select>
   """
 
   edit: """
-    <%= Formbuilder.templates['edit/options']({ includeBlank: true }) %>
+    <%= App.Formbuilder.templates['edit/options']({ includeBlank: true }) %>
   """
 
   addButton: """

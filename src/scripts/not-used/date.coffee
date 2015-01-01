@@ -1,4 +1,4 @@
-Formbuilder.registerField 'date',
+App.Formbuilder.registerField 'date',
 
   order: 20
 

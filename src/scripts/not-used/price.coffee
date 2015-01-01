@@ -1,4 +1,4 @@
-Formbuilder.registerField 'price',
+App.Formbuilder.registerField 'price',
 
   order: 45
 

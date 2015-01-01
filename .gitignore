@@ -2,3 +2,9 @@ node_modules
 bower_components
 .sass-cache
 compiled
+.settings
+nbproject
+.project
+npm-debug.log
+formbuilder.sublime-workspace
+dist

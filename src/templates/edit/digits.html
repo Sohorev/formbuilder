@@ -1,0 +1,13 @@
+<div class='fb-edit-section-header'>Digits</div>
+
+<div class='digit' data-rv-each-digit='model.<%= App.Formbuilder.options.mappings.DIGITS %>'>
+  <input type="text" data-rv-input="digits:scr" class='digits-scr-input' />
+  <input type="text" data-rv-input="digits:numb" class='digits-numb-input' />
+  <%= App.Formbuilder.templates['edit/masks']() %>
+  <a class="js-add-digit <%= App.Formbuilder.options.BUTTON_CLASS %>" title="Add digits section"><i class='fa fa-plus-circle'></i></a>
+  <a class="js-remove-digit <%= App.Formbuilder.options.BUTTON_CLASS %>" title="Remove digits section"><i class='fa fa-minus-circle'></i></a>
+</div>
+
+<div class='fb-bottom-add'>
+  <a class="js-add-digit <%= App.Formbuilder.options.BUTTON_CLASS %>">Add digits section</a>
+</div>

@@ -1,4 +1,4 @@
-Formbuilder.registerField 'address',
+App.Formbuilder.registerField 'address',
 
   order: 50
 

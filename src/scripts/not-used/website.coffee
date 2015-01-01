@@ -1,4 +1,4 @@
-Formbuilder.registerField 'website',
+App.Formbuilder.registerField 'website',
 
   order: 35
 

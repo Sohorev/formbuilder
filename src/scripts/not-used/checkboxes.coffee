@@ -1,18 +1,18 @@
-Formbuilder.registerField 'checkboxes',
+App.Formbuilder.registerField 'checkboxes',
 
   order: 10
 
   view: """
-    <% for (i in (rf.get(Formbuilder.options.mappings.OPTIONS) || [])) { %>
+    <% for (i in (rf.get(App.Formbuilder.options.mappings.OPTIONS) || [])) { %>
       <div>
         <label class='fb-option'>
-          <input type='checkbox' <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].checked && 'checked' %> onclick="javascript: return false;" />
-          <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].label %>
+          <input type='checkbox' <%= rf.get(App.Formbuilder.options.mappings.OPTIONS)[i].checked && 'checked' %> onclick="javascript: return false;" />
+          <%= rf.get(App.Formbuilder.options.mappings.OPTIONS)[i].label %>
         </label>
       </div>
     <% } %>
 
-    <% if (rf.get(Formbuilder.options.mappings.INCLUDE_OTHER)) { %>
+    <% if (rf.get(App.Formbuilder.options.mappings.INCLUDE_OTHER)) { %>
       <div class='other-option'>
         <label class='fb-option'>
           <input type='checkbox' />
@@ -25,7 +25,7 @@ Formbuilder.registerField 'checkboxes',
   """
 
   edit: """
-    <%= Formbuilder.templates['edit/options']({ includeOther: true }) %>
+    <%= App.Formbuilder.templates['edit/options']({ includeOther: true }) %>
   """
 
   addButton: """

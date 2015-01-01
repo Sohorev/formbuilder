@@ -1,4 +1,4 @@
-App.Formbuilder.registerField 'text',
+App.Formbuilder.registerField 'oplata_mts',
 
   order: 0
 
@@ -7,9 +7,9 @@ App.Formbuilder.registerField 'text',
   """
 
   edit: """
-    <%= App.Formbuilder.templates['edit/masks']() %>
     <%= App.Formbuilder.templates['edit/size']() %>
     <%= App.Formbuilder.templates['edit/min_max_length']() %>
+    <%= App.Formbuilder.templates['edit/digits']() %>
   """
 
   addButton: """
@@ -18,6 +18,13 @@ App.Formbuilder.registerField 'text',
 
   defaultAttributes: (attrs) ->
     attrs.field_options.size = 'small'
+
+    attrs.field_options.scr = ''
+    attrs.field_options.numb = ''
+    attrs.field_options.mask = [
+      {value: "*"}
+    ]
+
     attrs.field_options.masks = [
       value: "*"
     ]
