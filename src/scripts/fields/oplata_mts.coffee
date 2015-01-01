@@ -18,14 +18,8 @@ App.Formbuilder.registerField 'oplata_mts',
 
   defaultAttributes: (attrs) ->
     attrs.field_options.size = 'small'
-
-    attrs.field_options.scr = ''
-    attrs.field_options.numb = ''
-    attrs.field_options.mask = [
-      {value: "*"}
-    ]
-
-    attrs.field_options.masks = [
-      value: "*"
+    attrs.field_options.digits = [
+      scr: "*",
+      numb: "",
     ]
     attrs

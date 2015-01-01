@@ -9,9 +9,8 @@ class App.BuilderView extends Backbone.View
     'mouseout .fb-add-field-types': 'unlockLeftWrapper'
 
   initialize: (options) ->
-    {selector, flash, @formBuilder, @bootstrapData} = options
+    {selector, @flash, @formBuilder, @bootstrapData} = options
 
-    @flash = flash
     @isOplataMts = @flash == 'oplataMTS.swf'
 
     # This is a terrible idea because it's not scoped to this view.
@@ -158,10 +157,10 @@ class App.BuilderView extends Backbone.View
 
   createField: (field_type) ->
     rf = @collection.create App.Formbuilder.helpers.defaultFieldAttrs(field_type)
-    @createAndShowEditView(rf, field_type)
+    @createAndShowEditView(rf)
     @handleFormUpdate()
 
-  createAndShowEditView: (model, field_type) ->
+  createAndShowEditView: (model) ->
     $responseFieldEl = @$el.find(".fb-field-wrapper").filter( -> $(@).data('cid') == model.cid )
     $responseFieldEl.addClass('editing').siblings('.fb-field-wrapper').removeClass('editing')
 
@@ -172,8 +171,8 @@ class App.BuilderView extends Backbone.View
         return
 
       @editView.remove()
-
-    @editView = new App.Formbuilder.editViewFactory field_type, model, @
+    
+    @editView = new App.Formbuilder.editViewFactory model, @
 
     $newEditEl = @editView.render().$el
     @$el.find(".fb-edit-field-wrapper").html $newEditEl

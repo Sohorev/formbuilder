@@ -60,14 +60,19 @@ class App.Formbuilder
     else
       App.Formbuilder.inputFields[name] = opts
 
-  @editViewFactory: (field_type, model, parentView) ->
-    switch field_type
+  @editViewFactory: (model, parentView) ->
+
+    switch model.attributes[App.Formbuilder.options.mappings.FIELD_TYPE]
       when "text"
         new App.EditFieldView
           model: model
           parentView: parentView
       when "dropdown"
         new App.EditDropdownView
+          model: model
+          parentView: parentView
+      when "oplata_mts"
+        new App.EditDigitsSectionView
           model: model
           parentView: parentView
       else
